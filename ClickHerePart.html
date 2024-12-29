@@ -4,7 +4,8 @@
     body {
         font-family: Impact, sans-serif;
         background: #082f43;
-        color: white;
+        /*color: white;*/
+        /*字會變白色*/
         padding: 50px;
     }
     
@@ -111,16 +112,18 @@
 			for (let i = 0; i < title.length; i++) {			  
 				   text += '<div class="col s12 m6 l3">'
 				   text += '<div class="card">'
-				   text += ' <div class="card-image">'
-				   text += '   <img src="' + image[i] + '">'
-				   text += '    <span class="card-title">' + title[i] + '</span>'
-				   text += '  </div>'
+				   text += ' <div class="card-image waves-effect waves-block waves-light">'
+				   text += '   <img class="activator" src="' + image[i] + '">'
+				   text += ' </div>'
 				   text += '  <div class="card-content">'
-				   text += '    <p>' + intro[i].slice(0,80) + '.....</p>'
+                   text += '    <span class="card-title activator grey-text text-darken-4">' + title[i] + '<i class="material-icons right">more_vert</i></span>'
+				   text += '    <p><a href="B.html?pid=' + i + '">This is a link</a></p>'  
 				   text += '  </div>'
-				   text += '  <div class="card-action">'
-				   text += '    <a href="B.html?pid=' + i + '">This is a link</a>'
-				   text += '  </div>'
+				   text += '  <div class="card-reveal">'
+                   text += ' <span class="card-title grey-text text-darken-4">' + title[i] + '<i class="material-icons right">close</i></span>'
+				   text += ' <p>' + intro[i]+ '</p>'
+                   text += '</div>'
+                   text += '  </div>'
 				   text += ' </div>'
 				   text += '</div>'      				
 			}
