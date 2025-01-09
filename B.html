@@ -92,12 +92,12 @@
 		  var rows = data.getNumberOfRows();
 
 		  //var str = "";
-		  for (var r=1 ; r<rows ; r++) {
-			  title[r-1] = data.getFormattedValue(r,1);
-			  image[r-1] = data.getFormattedValue(r,2);
-			  intro[r-1] = data.getFormattedValue(r,3)
+		  //for (var r=1 ; r<rows ; r++) {
+			  //title[r-1] = data.getFormattedValue(r,1);
+			  //image[r-1] = data.getFormattedValue(r,2);
+			  //intro[r-1] = data.getFormattedValue(r,3)
 			  //str += data.getFormattedValue(r,0) + "(" +  data.getFormattedValue(r,1) + ")" + " 訂 " +  data.getFormattedValue(r,2) + " : " + data.getFormattedValue(r,3) + "個 <br />";
-		  }
+		  //}
 		  //document.getElementById("demo").innerHTML = str;
 		}
 
@@ -105,21 +105,20 @@
 		function f(){
 			let text = "";
 
-			//title = ["AAAA", "BBBB", "CCCC", "DDDD", "EEEE"];
-			//image = ["https://picdn.gomaji.com/products/1621440000/m/671/358671/358671_1_2.jpg",
-			//		 "https://picdn.gomaji.com/products/1621440000/m/504/358504/358504_1_15.jpg",
-			//		 "https://picdn.gomaji.com/products/1621440000/m/903/356903/356903_1.jpg",
-			//		 "https://picdn.gomaji.com/products/1621440000/m/627/358627/358627_1.jpg",
-			//		 "https://picdn.gomaji.com/products/1621440000/m/662/358662/358662_1_8.jpg"];
+			title = ["AAAA", "BBBB", "CCCC", "DDDD", "EEEE"];
+			image = ["https://picdn.gomaji.com/products/1621440000/m/671/358671/358671_1_2.jpg",
+					 "https://picdn.gomaji.com/products/1621440000/m/504/358504/358504_1_15.jpg",
+					 "https://picdn.gomaji.com/products/1621440000/m/903/356903/356903_1.jpg",
+					 "https://picdn.gomaji.com/products/1621440000/m/627/358627/358627_1.jpg",
+					 "https://picdn.gomaji.com/products/1621440000/m/662/358662/358662_1_8.jpg"];
 
 
 			var Y = decodeURIComponent(GetUrlVar('pid'));
 
-			for (let i = 0; i < title.length; i++)
-			{
-				text += '<h1>'+title[i]+'</h1>';
-				text += '<img src="' + image[Y] + '">';
-			}
+			
+			text += '<h1>'+title[Y]+'</h1>';
+			text += '<img src="' + image[Y] + '">';
+			
 			
 			
 			document.getElementById("demo").innerHTML += text;
@@ -258,34 +257,32 @@
 		  var rows = data.getNumberOfRows();
 
 		  //var str = "";
-		  for (var r=1 ; r<rows ; r++) {
-			  title[r-1] = data.getFormattedValue(r,1);
-			  image[r-1] = data.getFormattedValue(r,2);
-			  intro[r-1] = data.getFormattedValue(r,3)
+		  //for (var r=1 ; r<rows ; r++) 
+			//{
+		  //	  title[r-1] = data.getFormattedValue(r,1);
+		  //	  image[r-1] = data.getFormattedValue(r,2);
+		  //	  intro[r-1] = data.getFormattedValue(r,3)
 			  //str += data.getFormattedValue(r,0) + "(" +  data.getFormattedValue(r,1) + ")" + " 訂 " +  data.getFormattedValue(r,2) + " : " + data.getFormattedValue(r,3) + "個 <br />";
-		  }
+		    //}
 		  //document.getElementById("demo").innerHTML = str;
-		}
+			//}
 
 	    
 		function f(){
 			let text = "";
 
-			//title = ["AAAA", "BBBB", "CCCC", "DDDD", "EEEE"];
-			//image = ["https://picdn.gomaji.com/products/1621440000/m/671/358671/358671_1_2.jpg",
-			//		 "https://picdn.gomaji.com/products/1621440000/m/504/358504/358504_1_15.jpg",
-			//		 "https://picdn.gomaji.com/products/1621440000/m/903/356903/356903_1.jpg",
-			//		 "https://picdn.gomaji.com/products/1621440000/m/627/358627/358627_1.jpg",
-			//		 "https://picdn.gomaji.com/products/1621440000/m/662/358662/358662_1_8.jpg"];
+			title = ["AAAA", "BBBB", "CCCC", "DDDD", "EEEE"];
+			image = ["https://picdn.gomaji.com/products/1621440000/m/671/358671/358671_1_2.jpg",
+					 "https://picdn.gomaji.com/products/1621440000/m/504/358504/358504_1_15.jpg",
+					 "https://picdn.gomaji.com/products/1621440000/m/903/356903/356903_1.jpg",
+					 "https://picdn.gomaji.com/products/1621440000/m/627/358627/358627_1.jpg",
+					 "https://picdn.gomaji.com/products/1621440000/m/662/358662/358662_1_8.jpg"];
 
 
 			var Y = decodeURIComponent(GetUrlVar('pid'));
 
-			for (let i = 0; i < title.length; i++)
-			{
-				text += '<h1>'+title[i]+'</h1>';
-				text += '<img src="' + image[Y] + '">';
-			}
+			text += '<h1>'+title[Y]+'</h1>';
+			text += '<img src="' + image[Y] + '">';
 			
 			
 			document.getElementById("demo").innerHTML += text;
