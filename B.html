@@ -99,29 +99,31 @@
 	  	//document.getElementById("demo").innerHTML = str;
 	    }
 
-		function f(){
-			let text = "";
+	function f()
+	{
+		let text = "";
 
-			//title = ["AAAA", "BBBB", "CCCC", "DDDD", "EEEE"];
-			//image = ["https://picdn.gomaji.com/products/1621440000/m/671/358671/358671_1_2.jpg",
-			//		 "https://picdn.gomaji.com/products/1621440000/m/504/358504/358504_1_15.jpg",
-			//		 "https://picdn.gomaji.com/products/1621440000/m/903/356903/356903_1.jpg",
-			//		 "https://picdn.gomaji.com/products/1621440000/m/627/358627/358627_1.jpg",
-			//		 "https://picdn.gomaji.com/products/1621440000/m/662/358662/358662_1_8.jpg"];
-
-			
-			text += '<h1>' + title[Y] + '</h1>';
-			text += '<img src="' + image[Y] + '">';
-			
-			document.getElementById("demo").innerHTML += text;
-		}	
-
+		//title = ["AAAA", "BBBB", "CCCC", "DDDD", "EEEE"];
+		//image = ["https://picdn.gomaji.com/products/1621440000/m/671/358671/358671_1_2.jpg",
+		//		 "https://picdn.gomaji.com/products/1621440000/m/504/358504/358504_1_15.jpg",
+		//		 "https://picdn.gomaji.com/products/1621440000/m/903/356903/356903_1.jpg",
+		//		 "https://picdn.gomaji.com/products/1621440000/m/627/358627/358627_1.jpg",
+		//		 "https://picdn.gomaji.com/products/1621440000/m/662/358662/358662_1_8.jpg"];
 
 		
+		for(let i = 0 ; i < title.length; i++)
+			{
+				if (i=Y)
+				{
+					text += '<h1>' + title[i] + '</h1>';
+					text += '<img src="' + image[i] + '">';
+					
+					document.getElementById("demo").innerHTML += text;
+				}
+			}
+	}
+		
     </script>
-	  
-	  
-
 	  
     </head>
 
@@ -179,81 +181,120 @@
 
 
 
-   
-
-
-
     </body>
   </html>
   <head>
 	<script>
-		// https://developers.google.com/chart/interactive/docs/quick_start
-		// Load the Visualization API and the corechart package.
-		google.charts.load('current', {'packages':['corechart']});
-		// Set a callback to run when the Google Visualization API is loaded.	
-		google.charts.setOnLoadCallback(init);
-		// 這些陣列要移到所有function的外面，成為整體性變數
-		title = [];
-		image = [];
-		intro = [];
-		function init() 
+	
+		function GetUrlVar(VarName)<!--取得網址參數-->
+	{
+		name=name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+		var regexS="[\\?&]"+VarName+"=([^&#*])";
+		var regex=new RegExp(regexS);
+		var results = regex.exec(window.location.herf);
+		if (results==null)
+			return"";
+		else
+			return results[1];
+	}
+		
+		
+  <!DOCTYPE html>
+  <html>
+	  <head>
+	  <!--Import Google Icon Font-->
+	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+      	<!--Let browser know website is optimized for mobile-->
+      	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
+	<!-- 利用Google Visualization讀取Google Sheet https://www.labnol.org/code/google-sheet-d3js-visualization-200608 -->
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
+	  
+    <script type="text/javascript">
+
+		// 取得網址裡的參數 
+		function GetUrlVar(VarName) 
 		{
-			// 這個例子使用的試算表是 https://docs.google.com/spreadsheets/d/1QScI5d56Kh-LGywY4WR6EvRGPcalFQYUAdqMxbFVDvk/copy
-			// 將上述試算表另存副本後，你要在自己的雲端硬碟將該試算表設定成[知道連結的使用者都能查看]。
-			// 然後讓程式讀取 https://docs.google.com/spreadsheets/d/瀏覽器網址列上的網址擷取序號部分/gviz/tq?sheet=工作表名稱
-			// 也就是將下列的 1cB6a4F4soIDf8zOovv47nnYhJs_KESJKrInGyjJT-FQ 更換成自己的檔案序號，以及最後部分指讀取哪個工作表。
-			var url ='https://docs.google.com/spreadsheets/d/12PpcQGbPgyx-oI4aDe2WVJn7l54KcWfPMKwQNT3ILH8/gviz/tq?sheet=工作表1';
-			var query = new google.visualization.Query(url);
-			query.setQuery('select *');
-			query.send(processSheetsData);
+		  name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+		  var regexS = "[\\?&]" + VarName + "=([^&#]*)";
+		  var regex = new RegExp(regexS);
+		  var results = regex.exec(window.location.href);
+		  if (results == null)
+		   	 return "";
+		  else
+			 return results[1];
 		}
+	    
+	    // https://developers.google.com/chart/interactive/docs/quick_start
+	    // Load the Visualization API and the corechart package.
+	    google.charts.load('current', {'packages':['corechart']});
+	    // Set a callback to run when the Google Visualization API is loaded.	
+	    google.charts.setOnLoadCallback(init);
+	    // 這些陣列要移到所有function的外面，成為整體性變數
+	    title = [];
+	    image = [];
+	    intro = [];
+	    
+	    function init() 
+	    {
+		    // 這個例子使用的試算表是 https://docs.google.com/spreadsheets/d/1QScI5d56Kh-LGywY4WR6EvRGPcalFQYUAdqMxbFVDvk/copy
+		    // 將上述試算表另存副本後，你要在自己的雲端硬碟將該試算表設定成[知道連結的使用者都能查看]。
+		    // 然後讓程式讀取 https://docs.google.com/spreadsheets/d/瀏覽器網址列上的網址擷取序號部分/gviz/tq?sheet=工作表名稱
+		    // 也就是將下列的 1cB6a4F4soIDf8zOovv47nnYhJs_KESJKrInGyjJT-FQ 更換成自己的檔案序號，以及最後部分指讀取哪個工作表。
+		    var url ='https://docs.google.com/spreadsheets/d/12PpcQGbPgyx-oI4aDe2WVJn7l54KcWfPMKwQNT3ILH8/gviz/tq?sheet=工作表1';
+		    var query = new google.visualization.Query(url);
+		    query.setQuery('select *');
+		    query.send(processSheetsData);
+	    }
 
-		function processSheetsData(response) 
-		{
+	    var Y = decodeURIComponent(GetUrlVar('pid'));
+	    function processSheetsData(response) 
+	    {
+		    var data = response.getDataTable();
+		    var columns = data.getNumberOfColumns();
+		    var rows = data.getNumberOfRows();
 
-			var data = response.getDataTable();
-			var columns = data.getNumberOfColumns();
-			var rows = data.getNumberOfRows();
-			for (var r=1 ; r<rows ; r++)
+		    for (var r=1 ; r<rows ; r++)
+		    {
+			    title[r-1] = data.getFormattedValue(r,1);
+			    image[r-1] = data.getFormattedValue(r,2);
+			    intro[r-1] = data.getFormattedValue(r,3);
+		    }
+		  //str += data.getFormattedValue(r,0) + "(" +  data.getFormattedValue(r,1) + ")" + " 訂 " +  data.getFormattedValue(r,2) + " : " + data.getFormattedValue(r,3) + "個 <br />";
+
+	  	//document.getElementById("demo").innerHTML = str;
+	    }
+
+	function f()
+	{
+		let text = "";
+
+		//title = ["AAAA", "BBBB", "CCCC", "DDDD", "EEEE"];
+		//image = ["https://picdn.gomaji.com/products/1621440000/m/671/358671/358671_1_2.jpg",
+		//		 "https://picdn.gomaji.com/products/1621440000/m/504/358504/358504_1_15.jpg",
+		//		 "https://picdn.gomaji.com/products/1621440000/m/903/356903/356903_1.jpg",
+		//		 "https://picdn.gomaji.com/products/1621440000/m/627/358627/358627_1.jpg",
+		//		 "https://picdn.gomaji.com/products/1621440000/m/662/358662/358662_1_8.jpg"];
+
+		
+		for(let i = 0 ; i < title.length; i++)
 			{
-				title[r-1] = data.getFormattedValue(r,1);
-				image[r-1] = data.getFormattedValue(r,2);
-				intro[r-1] = data.getFormattedValue(r,3);
+				if (i=Y)
+				{
+					text += '<h1>' + title[i] + '</h1>';
+					text += '<img src="' + image[i] + '">';
+					
+					document.getElementById("demo").innerHTML += text;
+				}
 			}
-			//str += data.getFormattedValue(r,0) + "(" +  data.getFormattedValue(r,1) + ")" + " 訂 " +  data.getFormattedValue(r,2) + " : " + data.getFormattedValue(r,3) + "個 <br />";
-			//document.getElementById("demo").innerHTML = str;
-		}
-
-		function f(){
-			let text = "";
-
-			//title = ["AAAA", "BBBB", "CCCC", "DDDD", "EEEE"];
-			//image = ["https://picdn.gomaji.com/products/1621440000/m/671/358671/358671_1_2.jpg",
-			//		 "https://picdn.gomaji.com/products/1621440000/m/504/358504/358504_1_15.jpg",
-			//		 "https://picdn.gomaji.com/products/1621440000/m/903/356903/356903_1.jpg",
-			//		 "https://picdn.gomaji.com/products/1621440000/m/627/358627/358627_1.jpg",
-			//		 "https://picdn.gomaji.com/products/1621440000/m/662/358662/358662_1_8.jpg"];
-
-			
-			text += '<h1>' + title[Y] + '</h1>';
-			text += '<img src="' + image[Y] + '">';
-			
-			document.getElementById("demo").innerHTML += text;
-		}
-		
-		//let text="";
-		//title=["AA","BB","CC","DD","EE"]
-		//image=["https://res.klook.com/image/upload/q_85/c_fill,w_1360/v1696567388/ohpdapkjtyexdizk9tuf.webp",
-		//		"https://www.fetnet.net/content/dam/fetnet/user_resource/cbu/images/life-circle/on-the-road/2024/06/mountfuji/MountFuji.jpg",
-		//		"https://s.yimg.com/ny/api/res/1.2/nQUc8Hz8H746lVmM3arvKg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQ1Nw--/https://media.zenfs.com/zh-tw/live_japan_461/0703444bbc8a646830d5c46d1651f58e",
-		//		"https://rimage.gnst.jp/livejapan.com/public/article/detail/a/00/04/a0004120/img/basic/a0004120_main.jpg",
-		//		"https://attach.setn.com/newsimages/2024/10/30/4871942-PH.jpg"];
-		
-		//var Y=decodeURIComponent(GetUrlVar('pid'));
-		
-		//text+='<hi>'+title[Y]+'</h1>';
-		//text+='<img src="' +image[Y]+ '">';
-		//document.getElementById("demo").innerHTML += text;
-	</script>
+	}
+    </script>
 </head>
 </html>
