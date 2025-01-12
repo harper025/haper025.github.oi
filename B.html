@@ -74,7 +74,7 @@
       for (var r=1; r<rows; r++) {
         title[r-1] = data.getFormattedValue(r,1);
         image[r-1] = data.getFormattedValue(r,2);
-        intro[r-1] = data.getFormattedValue(r,3);
+        content[r-1] = data.getFormattedValue(r,3);
       }
     }
 
@@ -101,6 +101,7 @@
           text += '</div>';
           text += '<img src="' + image[i] + '">';
           text += '<hr style="border-color:#080808;">';
+          text += '<p>'+content[i]+'</p>'
           document.getElementById("demo").innerHTML += text;
           
         }
@@ -122,7 +123,7 @@
   
   <div class="row" id="demo"></div>
 
-  <a href="javascript:f();">查看飯店介紹</a>
+  <a href="javascript:f();">看故事</a>
 
   <footer class="page-footer">
     <div class="container">
