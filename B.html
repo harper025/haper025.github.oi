@@ -57,7 +57,7 @@
 
     var title = [];
     var image = [];
-    var intro = [];
+    var content = [];
     
     function init() {
       var url ='https://docs.google.com/spreadsheets/d/12PpcQGbPgyx-oI4aDe2WVJn7l54KcWfPMKwQNT3ILH8/gviz/tq?sheet=工作表1';
@@ -101,7 +101,7 @@
           text += '</div>';
           text += '<img src="' + image[i] + '" width="300" height="400">';
           text += '<hr style="border-color:#080808;">';
-          text += '<p>'+content[i]+'</p>'
+          text += '<p>' + content[i] + '</p>';
           document.getElementById("demo").innerHTML += text;
           
         }
