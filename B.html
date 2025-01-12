@@ -78,18 +78,32 @@
       }
     }
 
+    function hidingFFunction()
+    {
+      var t=document.getElementById("demo");
+      if (t.style.visibility == 'hidden')
+      {
+        t.style.visibility == 'visible';
+      }
+      else
+      {
+        t.style.visibility == 'hidden';
+      }
+    }
+
     function f() {
       let text = "";
       for (let i = 0; i < title.length; i++) {
         if (i == Y) {
           text += '<h1>' + title[i] + '</h1>';
           text += '<div>'
-          text += '<span class="shape-ex3">Home</span>, <span class="shape-ex3">Explore</span>, <span class="shape-ex3">About Us</span>'
-          text += '</div>'
+          text += '<span class="shape-ex3">Home</span>, <span class="shape-ex3">Explore</span>, <span class="shape-ex3">About Us</span>';
+          text += '</div>';
           text += '<img src="' + image[i] + '">';
-          text += '<hr style="border-color:#080808;">'
+          text += '<hr style="border-color:#080808;">';
+          document.getElementById("demo").innerHTML += text;
+          
         }
-        document.getElementById("demo").innerHTML += text;
       }
     }
   </script>
