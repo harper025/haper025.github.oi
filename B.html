@@ -70,9 +70,11 @@
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(init);
 
-    var title = [];
+    var catname = [];
     var image = [];
-    var content = [];
+    var skills = [];
+    var catgender = [];
+    var catbreed = [];
     
     function init() {
       var url ='https://docs.google.com/spreadsheets/d/12PpcQGbPgyx-oI4aDe2WVJn7l54KcWfPMKwQNT3ILH8/gviz/tq?sheet=工作表1';
@@ -87,9 +89,11 @@
       var rows = data.getNumberOfRows();
 
       for (var r=1; r<rows; r++) {
-        title[r-1] = data.getFormattedValue(r,1);
+        catname[r-1] = data.getFormattedValue(r,1);
         image[r-1] = data.getFormattedValue(r,2);
-        content[r-1] = data.getFormattedValue(r,3);
+        skills[r-1] = data.getFormattedValue(r,3);
+        catgender[r-1] = data.getFormattedValue(r,4);
+        catbreed[r-1] = data.getFormattedValue(r,5);
       }
     }
 
@@ -108,15 +112,17 @@
 
     function f() {
       let text = "";
-      for (let i = 0; i < title.length; i++) {
+      for (let i = 0; i < catname.length; i++) {
         if (i == Y) {
-          text += '<h1>' + title[i] + '</h1>';
+          text += '<h1>' + catname[i] + '</h1>';
           text += '<div>'
           text += '<span class="shape-ex3"><a herf="#">Home</a></span> <span class="shape-ex3"><a herf="#">Explore</a</span>, <span class="shape-ex3"><a herf="#">About Us</a</span>';
           text += '</div>';
           text += '<img src="' + image[i] + '" width="300" height="400">';
           text += '<hr style="border-color:#080808;">';
-          text += '<p>' + content[i] + '</p>';
+          text += '<p>性別: '+catgender[i]+'</p>'
+          text += '<p>品種: '+catbreed[i]+'</p>'
+          text += '<p>特殊技能: ' + skills[i] + '</p>';
           document.getElementById("demo").innerHTML += text;
           
         }
@@ -133,7 +139,7 @@
   
   <div class="row" id="demo"></div>
 
-  <a href="javascript:f();">看故事</a>
+  <a href="javascript:f();">看貓咪</a>
 
   <footer class="page-footer" style="background-color: #b0bec5; color: #fafafa;">
     <div class="container">
