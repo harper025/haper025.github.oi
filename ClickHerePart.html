@@ -90,6 +90,11 @@ footer
 	title = [];
 	image = [];
 	intro = [];
+	var catname = [];
+	var image = [];
+	var skills = [];
+	var catgender = [];
+	var catbreed = [];
 
 
 	function init() {
@@ -111,9 +116,11 @@ footer
 
 	  //var str = "";
 	  for (var r=1 ; r<rows ; r++) {
-		  title[r-1] = data.getFormattedValue(r,1);
+		  catname[r-1] = data.getFormattedValue(r,1);
 		  image[r-1] = data.getFormattedValue(r,2);
-		  intro[r-1] = data.getFormattedValue(r,3)
+		  skills[r-1] = data.getFormattedValue(r,3);
+		  catgender[r-1] = data.getFormattedValue(r,4);
+		  catbreed[r-1] = data.getFormattedValue(r,5);
 		  //str += data.getFormattedValue(r,0) + "(" +  data.getFormattedValue(r,1) + ")" + " 訂 " +  data.getFormattedValue(r,2) + " : " + data.getFormattedValue(r,3) + "個 <br />";
 	  }
 	  //document.getElementById("demo").innerHTML = str;
@@ -125,19 +132,19 @@ footer
 
 			//title = ["AAAA", "BBBB", "CCCC", "DDDD", "EEEE"];
 
-			for (let i = 0; i < title.length; i++) {			  
+			for (let i = 0; i < catname.length; i++) {			  
 				   text += '<div class="col s12 m6 l3">'
 				   text += '<div class="card">'
 				   text += ' <div class="card-image waves-effect waves-block waves-light">'
 				   text += '   <img class="activator" src="' + image[i] + '">'
 				   text += ' </div>'
 				   text += '  <div class="card-content">'
-                   		   text += ' <span class="card-title activator grey-text text-darken-4">' + title[i] + '<i class="material-icons right">more_vert</i></span>'
+                   		   text += ' <span class="card-title activator grey-text text-darken-4">' + catname[i] + '<i class="material-icons right">more_vert</i></span>'
 				   text += '    <p><a href="B.html?pid=' + i + '">This is a link</a></p>'  
 				   text += '  </div>'
 				   text += '  <div class="card-reveal">'
-                   		   text += ' <span class="card-title grey-text text-darken-4">' + title[i] + '<i class="material-icons right">close</i></span>'
-				   text += ' <p>' + intro[i]+ '</p>'
+                   		   text += ' <span class="card-title grey-text text-darken-4">' + catname[i] + '<i class="material-icons right">close</i></span>'
+				   text += ' <p>' + skills[i]+ '</p>'
                    		   text += '</div>'
                   		   text += '  </div>'
 				   text += ' </div>'
