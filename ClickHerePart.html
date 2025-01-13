@@ -6,6 +6,7 @@
       position: relative;
       width: 52%; /* 佔總寬度的50%，也可以換成任何你想要的寬度 */
       padding-top: 52%;  /* 也是佔總寬度的50%，因此長寬一樣長 */
+      margin: 0 auto;
     }
     
     .container img 
@@ -87,6 +88,50 @@ footer
       background-color: #b0bec5;
       box-shadow: 0px 3px 8px 0px #000;
     }
+
+.navbar
+	{
+	  background-color: #e0e0e0;
+	  height: 52%;
+	}
+	.logo{
+	    display:inline;
+	    /*因為在 <div> 標籤中預設是 display:block，會佔滿整排空間，所以改成 inline，就不會檔到後面的選單。*/
+	    a{
+	        color:#212121;
+	        margin-top: 1em;
+	        margin-bottom: 1em;
+	        text-decoration: none;
+	        line-height:50px;
+	        font-size: 24px;
+    		}/*設定 LOGO 文字，應該這邊要寫一個 <h1>，但是可能後面會需要，所以先保留，之後再來優化。*/
+	    .fa-music{
+	        color:#212121;
+	        margin-right: 1em;
+	       }
+	}
+	.menu{
+	    float:right;
+	    /*把選單擺右邊*/
+	    li{
+	        float:left;
+	        /*把選單內容要並排呈現。*/
+	    }
+	        a{
+		display:flex;
+		margin-right: 30px;
+		color:#212121;
+		text-decoration: none;
+		line-height:50px;
+		padding: 0 1em;
+		    }
+	    /*a 連結的設定*/
+	    a:hover{
+	        background-color:  #212121;
+	        color:#fafafa
+	    }
+	    /*a 連結的滑鼠移動過去的效果*/
+	}
 	  
 </style>
 <!--改變字型,家背景顏色bottom-->
@@ -196,15 +241,17 @@ footer
 	    
 <!--navbar-->
 <!-- As a heading -->
-<nav class="navbar navbar-light bg-light">
+<div class="navbar">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="https://images.sj33.cn/uploads/202310/2312293606-16.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-      貓咪事務所
-    </a>
+	<div class="logo">
+    		<a href="#">
+      		<img src="https://images.sj33.cn/uploads/202310/2312293606-16.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+      		貓咪事務所
+    		</a>
+	</div>
   </div>
-</nav>
-	    <img src="https://cdn.cybassets.com/s/files/18929/ckeditor/pictures/content_679f61eb-3abb-46f5-bee8-00c0dc8e9725.jpg" alt="Cute Cat" width="500">
+</div>
+	    <img src="https://cdn.cybassets.com/s/files/18929/ckeditor/pictures/content_679f61eb-3abb-46f5-bee8-00c0dc8e9725.jpg" alt="Cute Cat" width="90%">
 	    <p  class="Thepreface">貓咪的可愛是無法阻擋的可愛，奧地利動物行為學家康拉德·洛倫茨（Konrad Lorenz)，1943年提出了「嬰兒圖式」的概念。根據這個理論，人類會本能地將大眼睛、胖嘟嘟的臉頰和、小鼻子、小嘴巴等嬰兒特徵視為是可愛的。這樣的特徵會讓人們想照顧嬰兒，進而提升生物個體的生存機率。 就像嬰兒一樣，貓咪的身體特徵也會活化大腦的可愛反應。這可能是由於貓擁有包括大眼睛和小鼻子等，與嬰兒類似的的身體特徵。不僅如此，更有研究表明，人類會將「嬰兒圖式效應」延伸到動物身上。這或許就是我們會覺得貓咪可愛的根本原因。</p>
   <div class="row" id="demo">
 
