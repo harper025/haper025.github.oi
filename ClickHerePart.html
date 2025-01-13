@@ -21,6 +21,17 @@
       object-fit: cover; /* 和background-image設定background-size: cover一樣，圖片剛好填滿 */
       object-position: center;
     }
+
+    .object-fit-container {
+			    width: 300px;
+			    height: 300px;
+			    img {
+			        object-fit: cover;
+			        width: 100%;
+			        height: 100%;
+			    }
+     }
+
 	  
     p
     {
@@ -44,7 +55,10 @@
     }
     
     h1 {
-        font-size: 60px;
+        font-size: 100px;
+	color:#212121;
+	margin: 20px 0;
+	padding: 5px;
     }
     
     h2 {
@@ -213,8 +227,8 @@ footer
 			for (let i = 0; i < catname.length; i++) {			  
 				   text += '<div class="col s12 m6 l3">'
 				   text += '<div class="card">'
-				   text += ' <div class="card-image waves-effect waves-block waves-light">'
-				   text += '   <img class="activator" src="' + image[i] + '" width="100px">'
+				   text += ' <div class="object-fit-container">'
+				   text += '   <img src="' + image[i] + '">'
 				   text += ' </div>'
 				   text += '  <div class="card-content">'
                    		   text += ' <span class="card-title activator grey-text text-darken-4">' + catname[i] + '<i class="material-icons right">more_vert</i></span>'
@@ -242,16 +256,16 @@ footer
 <!--navbar-->
 <!-- As a heading -->
 <div class="navbar">
-  <div class="container-fluid">
+  <div class="container">
 	<div class="logo">
     		<a href="#">
-      		<img src="https://zh.pngtree.com/freepng/isolated-cat-on-white-background_9158356.html" alt="" width="30" height="24" class="d-inline-block align-text-top">
-      		貓咪事務所
+      		<img class="object-fit-container" src="https://png.pngtree.com/png-vector/20201229/ourmid/pngtree-cute-little-cat-lying-on-tummy-png-image_2653168.jpg" alt="cute cat">
+			<h1>貓咪事務所</h1>
     		</a>
 	</div>
   </div>
 </div>
-	    <img src="https://cdn.cybassets.com/s/files/18929/ckeditor/pictures/content_679f61eb-3abb-46f5-bee8-00c0dc8e9725.jpg" alt="Cute Cat" width="100%">
+	    <img class="object-fit-container" src="https://cdn.cybassets.com/s/files/18929/ckeditor/pictures/content_679f61eb-3abb-46f5-bee8-00c0dc8e9725.jpg">
 	    <p  class="Thepreface">貓咪的可愛是無法阻擋的可愛，奧地利動物行為學家康拉德·洛倫茨（Konrad Lorenz)，1943年提出了「嬰兒圖式」的概念。根據這個理論，人類會本能地將大眼睛、胖嘟嘟的臉頰和、小鼻子、小嘴巴等嬰兒特徵視為是可愛的。這樣的特徵會讓人們想照顧嬰兒，進而提升生物個體的生存機率。 就像嬰兒一樣，貓咪的身體特徵也會活化大腦的可愛反應。這可能是由於貓擁有包括大眼睛和小鼻子等，與嬰兒類似的的身體特徵。不僅如此，更有研究表明，人類會將「嬰兒圖式效應」延伸到動物身上。這或許就是我們會覺得貓咪可愛的根本原因。</p>
   <div class="row" id="demo">
 
