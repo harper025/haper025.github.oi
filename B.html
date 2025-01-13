@@ -96,51 +96,7 @@
       box-shadow: 0px 3px 8px 0px #000;
     }
 
-	.navbar
-	{
-	  background-color: #e0e0e0;
-	  height: 100px;
-	}
-	.logo{
-	    display:inline;
-	    /*因為在 <div> 標籤中預設是 display:block，會佔滿整排空間，所以改成 inline，就不會檔到後面的選單。*/
-	    a{
-	        color:#212121;
-	        margin-top: 1em;
-	        margin-bottom: 1em;
-	        text-decoration: none;
-	        line-height:50px;
-	        font-size: 24px;
-    		}/*設定 LOGO 文字，應該這邊要寫一個 <h1>，但是可能後面會需要，所以先保留，之後再來優化。*/
-	    .fa-music{
-	        color:#212121;
-	        margin-right: 1em;
-	       }
-	}
-	.menu{
-	    float:right;
-	    /*把選單擺右邊*/
-	    li{
-	        float:left;
-	        /*把選單內容要並排呈現。*/
-	    }
-	        a{
-		display:flex;
-		margin-right: 30px;
-		color:#212121;
-		text-decoration: none;
-		line-height:50px;
-		padding: 0 1em;
-		    }
-	    /*a 連結的設定*/
-	    a:hover{
-	        background-color:  #212121;
-	        color:#fafafa
-	    }
-	    /*a 連結的滑鼠移動過去的效果*/
-	}
-		
-    
+	  
   </style>
 
   <script type="text/javascript">
@@ -215,14 +171,13 @@
 <body>
  <!--navbar-->
 <!-- As a heading -->
-<div class="navbar">
-  <div class="container-fluid">
-    		<a href="#">
-      		<img src="https://images.sj33.cn/uploads/202310/2312293606-16.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-      		貓咪事務所
-		</a>
-  </div>
-</div>
+<!-- Image and text -->
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="https://img.lovepik.com/free-png/20210919/lovepik-cat-png-image_400483991_wh1200.png" width="30" height="30" class="d-inline-block align-top" alt="black cat">
+    貓咪事務所
+  </a>
+</nav>
   
   <div class="row" id="demo"></div>
 
