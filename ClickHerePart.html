@@ -22,16 +22,15 @@
       object-position: center;
     }
 
-    .object-fit-container {
-			    width: 300px;
-			    height: 100px;
-			    img {
-			        object-fit: cover;
-			        width: 100%;
-			        height: 100%;
-			    }
-     }
-
+.object-fit-container {
+    width: 300px;
+    height: 300px;
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
 	  
     p
     {
@@ -185,7 +184,9 @@ footer
 				   text += '<div class="col s12 m6 l3">'
 				   text += '<div class="card">'
 				   text += ' <div class="card-title">'
-				   text += '   <img src="' + image[i] + '" alt="cats" height="400">'
+				   text += '<div class="object-fit-container">'
+				   text += '   <img src="' + image[i] + '" alt="cats">'
+				   text += '</div>'
 				   text += ' </div>'
 				   text += '  <div class="card-content">'
                    		   text += ' <span class="card-title activator grey-text text-darken-4">' + catname[i] + '<i class="material-icons right">more_vert</i></span>'
@@ -212,7 +213,7 @@ footer
 	    
 <!--navbar-->
 <!-- Image and text -->
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-light bg-blue">
   <a class="navbar-brand" href="#">
     <img src="https://img.lovepik.com/free-png/20210919/lovepik-cat-png-image_400483991_wh1200.png" width="30" height="30" class="d-inline-block align-top" alt="black cat">
     貓咪事務所
