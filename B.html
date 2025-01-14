@@ -161,10 +161,6 @@
     function processSheetsData(response) {
       var data = response.getDataTable();
       var rows = data.getNumberOfRows();
-      var inputtext=data.createElement("input")
-      text.type = "text";
-      text.name = "hello";
-      data.appendChild(text);
 
       for (var r=1; r<rows; r++) {
         catname[r-1] = data.getFormattedValue(r,1);
@@ -225,6 +221,10 @@
           text += '<p>性別: '+catgender[i]+'</p>'
           text += '<p>品種: '+catbreed[i]+'</p>'
           text += '<p>特殊技能: ' + skills[i] + '</p>';
+	  text += '<form action="/formActionPage.php">'
+	  text += '<input type="text" id="newInputName" name="newInputName">'
+	  text += '<input type="submit" value="Submit">'
+	  text += '</form>'
 	  text += '</div>'
           document.getElementById("demo").innerHTML += text;
           
