@@ -228,6 +228,33 @@ footer
 		.catch(error => console.error('Error!', error.message));
 	    }
 
+		//為bottom設定監聽事件
+		let sendButton = document.querySelector('button');
+		function send() {
+			  let name = document.querySelector('#nameValue').value;
+			  let Image = document.querySelector('#ImageValue').value;
+			  let skills = document.querySelector('#skillsValue').value;
+			  let gender = document.querySelector('#genderValue').value;
+			  let breed = document.querySelector('#breedValue').value;
+			  $.ajax({
+			    url: "https://script.google.com/macros/s/AKfycbwy1w3eXdgpp-auXZJy2IszvJpZyldK9U66dwSydCqBCfhk0hpakQqWaI56AOfyan-byA/exec",
+			    data: {
+			        "name": name,
+			        "Image": Image,
+			        "skills": skills,
+				"gender": gender,
+				"breed": breed
+			    },
+			    success: function(response) {
+			      if(response == "成功"){
+			        alert("成功");
+			      }
+			    },
+			  });
+			};
+		sendButton.addEventListener('click', send);
+		
+		
 		function f(){
 			let text = "";
 
@@ -317,7 +344,7 @@ footer
 			</div>
 			</div>
 			<div class="container">
-			<button type="button" onclick="submitData()">送出</button>
+			<button type="button" onclick="send()">送出</button>
 			</div>
 		</form>
 
