@@ -152,8 +152,9 @@ footer
     <!-- 利用Google Visualization讀取Google Sheet https://www.labnol.org/code/google-sheet-d3js-visualization-200608 -->
     <script src="https://www.gstatic.com/charts/loader.js"></script>
     <link rel="stylesheet" herf="../fontChangingWordStyle.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-	<script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+     <script>
 	
     // https://developers.google.com/chart/interactive/docs/quick_start
 	// Load the Visualization API and the corechart package.
@@ -203,7 +204,7 @@ footer
 	  //document.getElementById("demo").innerHTML = str;
 	}
 
-	function submitData() {
+	/*function submitData() {
 		const scriptURL = 'https://script.google.com/macros/s/AKfycbx_IkFXCu5vY44RW23nf9hnKVfLXsk-Z45KbzcPjlrJDIOcm8gKUPHlDo4RWgtJzOne/exec'; // 替換為 Apps Script 部署的 URL
 		const formData = new FormData(document.getElementById('dataForm'));
 		
@@ -228,7 +229,7 @@ footer
 		  }
 		})
 		.catch(error => console.error('Error!', error.message));
-	    }
+	    }*/
 
 		
 		function f(){
@@ -292,29 +293,29 @@ footer
                 <p class="grey-text text-lighten-4">在這裡輸入文字可以加入你的貓咪喔</p>
               </div>
 		    
-		<div class="container">
+		<div>
 			<iframe name="hidden_iframe" style="display:none;"></iframe>
 			<div class="row">
 			<div class="col l6 s12">
-			<form action="https://script.google.com/a/macros/smail.nchu.edu.tw/s/AKfycbwa8PG4-V0SIdRkW_837oTNYmpeQXZGZGny-DcTppTTvMEDAKuyX7Y13QbDZd3-Sb9uJQ/exec" method="get" >
+			<form action="https://script.google.com/macros/s/AKfycbwaBtdV3jN8hxElfffYpASCIbEtInq_yBaXd8-MIihWgfiFwEvXAfoRpo7EtSR6bpFP6A/exec" method="get" >
 			<label>貓咪名稱:
-			<input type="text" id="nameValue"><br><br>
+			<input type="text" name="name" placeholder="name"><br><br>
 			</label>
 				
 			<label>圖片 URL:
-			<input type="text" id="imageValue"><br><br>
+			<input type="url" name="image" placeholder="image"><br><br>
 			</label>
 				
 			<label>技能:
-			<input type="text" id="skillsValue"><br><br>
+			<input type="text" name="skills" placeholder="skills"><br><br>
 			</label>
 				
 			<label>性別:
-			<input type="text" id="genderValue"><br><br>
+			<input type="text" name="gender" placeholder="gender"><br><br>
 			</label>
 				
 			<label>品種:
-			<input type="text" id="breedValue"><br><br>
+			<input type="text" name="breed" placeholder="breed"><br><br>
 			</label>
 			<button>送出</button>
 			</form>
@@ -322,7 +323,7 @@ footer
 			</div>
 			</div>
 		</div>
-		    <script type="text/javascript" scr="sendhtmlindexintogooglesheet.js"></script>
+		    
 		
             </div>
           </div>
