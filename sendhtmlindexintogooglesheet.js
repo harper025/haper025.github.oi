@@ -2,15 +2,15 @@ let sendButton = document.querySelector('button');
 
 function send() {
   let name = document.querySelector('#nameValue').value;
-  let Image = document.querySelector('#ImageValue').value;
+  let image = document.querySelector('#imageValue').value;
   let skills = document.querySelector('#skillsValue').value;
   let gender = document.querySelector('#genderValue').value;
   let breed = document.querySelector('#breedValue').value;
   $.ajax({
-    url: "填入google sheet api url",
+    url: "https://script.google.com/macros/s/AKfycbwzgLNyU8Rhw4A30hVtaV6TRUTPll3_j9y2Xu4_5XI_AGepM-yOk3uXN27_vHPI8t1tPA/exec",
     data: {
         "name": name,
-        "Image": Image,
+        "image": image,
         "skills": skills,
         "gender": gender,
         "breed": breed,
