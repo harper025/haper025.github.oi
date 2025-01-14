@@ -201,6 +201,7 @@
       query.send(processSheetsData);
     }
 
+
     var Y = decodeURIComponent(GetUrlVar('pid'));
     function processSheetsData(response) {
       var data = response.getDataTable();
@@ -215,31 +216,7 @@
       }
     }
 
-    //將網頁數值回傳至google sheet
-    function generateTable(dataArray){
-	    // 獲取上述 HTML 文件中 ID 為 "table-body" 的元素：<tbody> 標籤
-	    let tablebody = document.getElementById("demo");
-	
-	    // 對試算表中的每一行資料（rowData）進行迴圈運算
-	    dataArray.forEach(function(rowData) {
-		    // 為每一行數據創建一個表格行元素 <tr>
-		    let row = document.createElement("tr");
-	
-	        // 對當資料行中的每個儲存格數據（cellData）進行迴圈運算
-	        rowData.forEach(function(cellData) {
-	            // 為每個儲存格數據，創建一個表格單元格元素 <td>
-	            let cell = document.createElement("td");
-	            // 設置儲存格數據的資料內容放到 <td>　元素中
-	            cell.textContent = cellData;
-	            // 將創建的單元格 <td> 添加到當前的表格行 <tr> 中
-	            row.appendChild(cell);
-	        });
-	
-	        // 將創建的表格行 <tr> 添加到表格主體 <tbody> 中
-	        tablebody.appendChild(row);
-	    });
-    }
-
+    
 
     function hidingFFunction()
     {
@@ -254,6 +231,34 @@
       }
     }
 
+    //傳送資料到表單
+    function submitData() {
+        const scriptURL = 'YOUR_APPS_SCRIPT_DEPLOYMENT_URL'; // 替換為 Apps Script 部署的 URL
+        const formData = new FormData(document.getElementById('dataForm'));
+
+        const data = {};
+        formData.forEach((value, key) => {
+          data[key] = value;
+        });
+
+        fetch(scriptURL, {
+          method: 'POST',
+          body: JSON.stringify(data),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.status === "success") {
+            alert("資料已成功傳送!");
+          } else {
+            alert("傳送失敗，請重試。");
+          }
+        })
+        .catch(error => console.error('Error!', error.message));
+      }
+
     function f() {
       let text = "";
       for (let i = 0; i < catname.length; i++) {
@@ -265,12 +270,13 @@
           text += '<p>性別: '+catgender[i]+'</p>'
           text += '<p>品種: '+catbreed[i]+'</p>'
           text += '<p>特殊技能: ' + skills[i] + '</p>';
-	  text += '<form action="/formActionPage.php">'
-	  text += '<span>'
-	  text += '<input type="text" id="newInputKey" name="newInputKey" placeholder="Please input the new character.">'
-	  text += '<input type="text" id="newInputValue" name="newInputValue" placeholder="Please give the new character a discribtion.">'
-	  text += '</span>'
-	  text += '<input type="submit" value="Submit" class="bottom">'
+	  text += '<form id="dataForm">'
+	  text +=  '<input type="text" id="name" name="name" placeholder="喵咪名稱">'
+	  text +=  '<input type="text" id="image" name="image" placeholder="貓咪照片">'
+          text +=  '<input type="text" id="skills" name="skills" placeholder="技能">'
+	  text +=  '<input type="text" id="gender" name="gender" placeholder="性別">'
+ 	  text +=  '<input type="text" id="breed" name="breed" placeholder="品種">'
+	  text += '<button type="button" onclick="submitData()">送出</button>'
 	  text += '</form>'
 	  text += '</div>'
           document.getElementById("demo").innerHTML += text;
