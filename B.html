@@ -231,34 +231,7 @@
       }
     }
 
-    //傳送資料到表單
-    function submitData() {
-        const scriptURL = 'YOUR_APPS_SCRIPT_DEPLOYMENT_URL'; // 替換為 Apps Script 部署的 URL
-        const formData = new FormData(document.getElementById('dataForm'));
-
-        const data = {};
-        formData.forEach((value, key) => {
-          data[key] = value;
-        });
-
-        fetch(scriptURL, {
-          method: 'POST',
-          body: JSON.stringify(data),
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
-        .then(response => response.json())
-        .then(data => {
-          if (data.status === "success") {
-            alert("資料已成功傳送!");
-          } else {
-            alert("傳送失敗，請重試。");
-          }
-        })
-        .catch(error => console.error('Error!', error.message));
-      }
-
+    
     function f() {
       let text = "";
       for (let i = 0; i < catname.length; i++) {
@@ -270,14 +243,6 @@
           text += '<p>性別: '+catgender[i]+'</p>'
           text += '<p>品種: '+catbreed[i]+'</p>'
           text += '<p>特殊技能: ' + skills[i] + '</p>';
-	  text += '<form id="dataForm">'
-	  text +=  '<input type="text" id="name" name="name" placeholder="喵咪名稱">'
-	  text +=  '<input type="text" id="image" name="image" placeholder="貓咪照片">'
-          text +=  '<input type="text" id="skills" name="skills" placeholder="技能">'
-	  text +=  '<input type="text" id="gender" name="gender" placeholder="性別">'
- 	  text +=  '<input type="text" id="breed" name="breed" placeholder="品種">'
-	  text += '<button type="button" onclick="submitData()">送出</button>'
-	  text += '</form>'
 	  text += '</div>'
           document.getElementById("demo").innerHTML += text;
           
