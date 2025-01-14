@@ -161,6 +161,10 @@
     function processSheetsData(response) {
       var data = response.getDataTable();
       var rows = data.getNumberOfRows();
+      var inputtext=data.createElement("input")
+      text.type = "text";
+      text.name = "hello";
+      data.appendChild(text);
 
       for (var r=1; r<rows; r++) {
         catname[r-1] = data.getFormattedValue(r,1);
@@ -170,6 +174,32 @@
         catbreed[r-1] = data.getFormattedValue(r,5);
       }
     }
+
+    //將網頁數值回傳至google sheet
+    function generateTable(dataArray){
+	    // 獲取上述 HTML 文件中 ID 為 "table-body" 的元素：<tbody> 標籤
+	    let tablebody = document.getElementById("demo");
+	
+	    // 對試算表中的每一行資料（rowData）進行迴圈運算
+	    dataArray.forEach(function(rowData) {
+		    // 為每一行數據創建一個表格行元素 <tr>
+		    let row = document.createElement("tr");
+	
+	        // 對當資料行中的每個儲存格數據（cellData）進行迴圈運算
+	        rowData.forEach(function(cellData) {
+	            // 為每個儲存格數據，創建一個表格單元格元素 <td>
+	            let cell = document.createElement("td");
+	            // 設置儲存格數據的資料內容放到 <td>　元素中
+	            cell.textContent = cellData;
+	            // 將創建的單元格 <td> 添加到當前的表格行 <tr> 中
+	            row.appendChild(cell);
+	        });
+	
+	        // 將創建的表格行 <tr> 添加到表格主體 <tbody> 中
+	        tablebody.appendChild(row);
+	    });
+    }
+
 
     function hidingFFunction()
     {
