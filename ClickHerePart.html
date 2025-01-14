@@ -201,34 +201,6 @@ footer
 	  //document.getElementById("demo").innerHTML = str;
 	}
 
-	//傳送資料到表單
-    function submitData() {
-        const scriptURL = 'YOUR_APPS_SCRIPT_DEPLOYMENT_URL'; // 替換為 Apps Script 部署的 URL
-        const formData = new FormData(document.getElementById('dataForm'));
-
-        const data = {};
-        formData.forEach((value, key) => {
-          data[key] = value;
-        });
-
-        fetch(scriptURL, {
-          method: 'POST',
-          body: JSON.stringify(data),
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
-        .then(response => response.json())
-        .then(data => {
-          if (data.status === "success") {
-            alert("資料已成功傳送!");
-          } else {
-            alert("傳送失敗，請重試。");
-          }
-        })
-        .catch(error => console.error('Error!', error.message));
-      }
-
 	
 
 		function f(){
@@ -259,7 +231,35 @@ footer
 
 			document.getElementById("demo").innerHTML += text;
 		}	
-		</script>   	  
+		</script>
+	    <script>
+		    function submitData() {
+			const scriptURL = 'YOUR_APPS_SCRIPT_DEPLOYMENT_URL'; // 替換為 Apps Script 部署的 URL
+			const formData = new FormData(document.getElementById('dataForm'));
+			
+			const data = {};
+			formData.forEach((value, key) => {
+			  data[key] = value;
+			});
+			
+			fetch(scriptURL, {
+			  method: 'POST',
+			  body: JSON.stringify(data),
+			  headers: {
+			    'Content-Type': 'application/json'
+			  }
+			})
+			.then(response => response.json())
+			.then(data => {
+			  if (data.status === "success") {
+			    alert("資料已成功傳送!");
+			  } else {
+			    alert("傳送失敗，請重試。");
+			  }
+			})
+			.catch(error => console.error('Error!', error.message));
+		    }
+	    </script>
 	  
   
 	  
