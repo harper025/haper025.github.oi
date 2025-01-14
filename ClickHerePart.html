@@ -203,7 +203,7 @@ footer
 
 	function submitData() {
 		const scriptURL = 'https://script.google.com/macros/s/AKfycbx_IkFXCu5vY44RW23nf9hnKVfLXsk-Z45KbzcPjlrJDIOcm8gKUPHlDo4RWgtJzOne/exec'; // 替換為 Apps Script 部署的 URL
-		const formData = new FormData(document.getElementById('demo'));
+		const formData = new FormData(document.getElementById('dataForm'));
 		
 		const data = {};
 		formData.forEach((value, key) => {
