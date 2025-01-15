@@ -8,7 +8,7 @@ function send() {
   let breed = document.querySelector('#breedValue').value;
   let video = document.querySelector('#videoValue').value;
   $.ajax({
-    url: "https://script.google.com/macros/s/AKfycbwzgLNyU8Rhw4A30hVtaV6TRUTPll3_j9y2Xu4_5XI_AGepM-yOk3uXN27_vHPI8t1tPA/exec",
+    url: "https://script.google.com/macros/s/AKfycbxaQqwHh4YfDg2QAtVnlCkJhRZBD781nr2AzbC2d8hjcLhYgXSJmam1iIbQ1z-TTiXCqg/exec",
     data: {
         "name": name,
         "image": image,
