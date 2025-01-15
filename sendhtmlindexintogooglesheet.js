@@ -6,7 +6,7 @@ function send() {
   let skills = document.querySelector('#skillsValue').value;
   let gender = document.querySelector('#genderValue').value;
   let breed = document.querySelector('#breedValue').value;
-  let videofromyoutube = document.querySelector('#vedioValue').value;
+  let video = document.querySelector('#videoValue').value;
   $.ajax({
     url: "https://script.google.com/macros/s/AKfycbwzgLNyU8Rhw4A30hVtaV6TRUTPll3_j9y2Xu4_5XI_AGepM-yOk3uXN27_vHPI8t1tPA/exec",
     data: {
@@ -15,7 +15,7 @@ function send() {
         "skills": skills,
         "gender": gender,
         "breed": breed,
-        "video" : videofromyoutube
+        "video" : video
         
     },
     success: function(response) {
