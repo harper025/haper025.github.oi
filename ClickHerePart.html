@@ -139,6 +139,45 @@ p{
     font-style: normal;
 }
 
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
 
 
 
@@ -275,12 +314,14 @@ p{
 		}
 
 
+	     function openNav() {
+		  document.getElementById("mySidenav").style.width = "250px";
+		}
+		
+		function closeNav() {
+		  document.getElementById("mySidenav").style.width = "0";
+		}
 
-
-	     	document.addEventListener('DOMContentLoaded', function() {
-		    var elems = document.querySelectorAll('.sidenav');
-		    var instances = M.Sidenav.init(elems, options);
-		  });
 	     
 		</script>
 		    
@@ -294,7 +335,7 @@ p{
 	<div class="container-fluid">
   <a class="navbar-brand" href="#">
     <img src="https://bpic.588ku.com/element_pic/23/04/25/01d5ea95f5e6c2148fa464b7c9cad559.png!/fw/350/quality/99/unsharp/true/compress/true" width="50" height="50" class="d-inline-block align-top" alt="black cat">
-    <span style="font-size:50px; margin: 10px 0; padding: 5px;">貓咪事務所</span>
+    <span style="font-size:50px; margin: 10px 0; padding: 5px; cursor:pointer" onclick="openNav()">&#9776;>貓咪事務所</span>
   </a>
 	</div>
 </nav>
@@ -357,24 +398,8 @@ p{
 		
             </div>
           </div>
-
-		<nav>關於我們</nav>
-
-		  <ul id="slide-out" class="sidenav">
-		    <li><div class="user-view">
-		      <div class="background">
-		        <img src="images/office.jpg">
-		      </div>
-		      <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
-		      <a href="#name"><span class="white-text name">John Doe</span></a>
-		      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-		    </div></li>
-		    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-		    <li><a href="#!">Second Link</a></li>
-		    <li><div class="divider"></div></li>
-		    <li><a class="subheader">Subheader</a></li>
-		    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-		  </ul>
+		
+		
   <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <div class="footer-copyright">
             <div class="container">
