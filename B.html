@@ -201,7 +201,6 @@
     var skills = [];
     var catgender = [];
     var catbreed = [];
-    var video = [];
     
     function init() {
       var url ='https://docs.google.com/spreadsheets/d/12PpcQGbPgyx-oI4aDe2WVJn7l54KcWfPMKwQNT3ILH8/gviz/tq?sheet=工作表1';
@@ -222,7 +221,6 @@
         skills[r-1] = data.getFormattedValue(r,3);
         catgender[r-1] = data.getFormattedValue(r,4);
         catbreed[r-1] = data.getFormattedValue(r,5);
-	video[r-1] = data.getFormattedValue(r,6);
       }
     }
 
@@ -253,9 +251,6 @@
           text += '<p>性別: '+catgender[i]+'</p>'
           text += '<p>品種: '+catbreed[i]+'</p>'
           text += '<p>特殊技能: ' + skills[i] + '</p>';
-	  text += '</div>'
-	  text += '<div class="video1">'
-	  text += '<iframe width="560" height="315" src="'+videoe[i]+'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>'
 	  text += '</div>'
           document.getElementById("demo").innerHTML += text;
           
