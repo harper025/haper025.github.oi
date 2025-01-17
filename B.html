@@ -273,6 +273,7 @@
           
         }
       }
+	    document.getElementById("demo").disabled="disabled"
     }
   </script>
 </head>
@@ -289,11 +290,8 @@
   
   <div class="row" id="demo"></div>
 
-  <div>
-  <div class="button1" id="button1"></div>
-	<a class="button2" href="javascript:f();">看貓咪</a>
-  </div>
-	<script>
+	<a href="javascript:f();">看貓咪</a>
+  
 		button2.onclock=function () {
 			if (button1.style.display=='non'){
 				button1.style.display='block'
