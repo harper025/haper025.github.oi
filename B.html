@@ -277,8 +277,8 @@
           text += '<p>品種: '+catbreed[i]+'</p>'
           text += '<p>特殊技能: ' + skills[i] + '</p>';
 	  text += '</div>'
+	  document.getElementById("demo").innerHTML += text;
         }
-	      document.getElementById("demo").innerHTML += text;
       }
 	   
     }
@@ -286,7 +286,7 @@
 
 	  function toggle(){
 		  var div = document.getElementById("div1");
-		  if (div.style.display == "block"){
+		  if (div.style.display == "inline"){
 			  div.style.display = "none";
 		  }else{
 			  div.style.display = "block";
