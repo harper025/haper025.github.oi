@@ -139,6 +139,58 @@ p{
     font-style: normal;
 }
 
+
+#div1{
+	display:block;
+	background-color:#ffcc80;
+	width:200px;
+	height:100px;
+}
+
+
+.button {
+	display: inline-block;
+	padding: .75rem 1.25rem;
+	border-radius: 10rem;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1rem;
+	letter-spacing: .15rem;
+	transition: all .3s;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: $color;
+		border-radius: 10rem;
+		z-index: -2;
+	}
+	&:before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0%;
+		height: 100%;
+		background-color: darken($color, 15%);
+		transition: all .3s;
+		border-radius: 10rem;
+		z-index: -1;
+	}
+	&:hover {
+		color: #fff;
+		&:before {
+			width: 100%;
+		}
+	}
+}
+
 </style>
 <!--改變字型,家背景顏色bottom-->
     <head>
@@ -270,6 +322,16 @@ p{
 
 			document.getElementById("demo").innerHTML += text;
 		}
+
+	     function toggle(){
+		  var div = document.getElementById("div1");
+		  if (div.style.display == "block"){
+			  div.style.display = "none";
+		  }else{
+			  div.style.display = "none";
+		  }
+		  //document.getElementById("demo").innerHTML += div.style.display;
+	  }
  
 		</script>
 		    
@@ -303,7 +365,9 @@ p{
 
   </div>
 
-   <a href="javascript:f();">看貓咪</a>
+   <div id="div1">
+	<bottom onclick="toggle();"><a href="javascript:f();">看貓咪</a></bottom>
+	</div>
 
         <footer class="page-footer" style="background-color: #b0bec5; color: #fafafa;">
           <div class="container">
