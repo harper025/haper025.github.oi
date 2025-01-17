@@ -196,6 +196,14 @@
 	text-align:center;
 	background-color:antiquewhite;
 }
+
+#div1{
+	display:block;
+	background-color:#ffcc80;
+	width:200px;
+	height:100px;
+}
+
 	  
 
 	  
@@ -273,8 +281,18 @@
           
         }
       }
-	    document.getElementById("demo").disabled="disabled"
+	   
     }
+
+
+	  function toggle(){
+		  var div = document.getElementById("div1");
+		  if (div.style.display == "block"){
+			  div.style.display = "none";
+		  }else{
+			  div.style.display = "block";
+		  }
+	  }
   </script>
 </head>
 <body>
@@ -290,7 +308,8 @@
   
   <div class="row" id="demo"></div>
 
-	<bottom><a href="javascript:f();">看貓咪</a></bottom>
+	<div id="div1"></div>
+	<bottom onclick="toggle();"><a href="javascript:f();">看貓咪</a></bottom>
 
   <footer class="page-footer" style="background-color: #b0bec5; color: #fafafa;">
     <div class="container">
