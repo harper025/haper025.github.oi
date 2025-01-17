@@ -179,6 +179,23 @@
 		}
 	}
 }
+
+
+.button1{
+	display:none;
+	heigt:200px;
+	width:200px;
+	background-color:#ffcc80;
+}
+	  
+.botton2{
+	display:block;
+	height:200px;
+	weight:200px;
+	font:18px;
+	text-align:center;
+	background-color:antiquewhite;
+}
 	  
 
 	  
@@ -272,7 +289,20 @@
   
   <div class="row" id="demo"></div>
 
-  <a href="javascript:f();">看貓咪</a>
+  <div>
+  <div class="button1" id="button1"></div>
+	<botton class="button2" id="button2"><a href="javascript:f();">看貓咪</a></botton>
+  </div>
+	<script>
+		button2.onclock=function () {
+			if (button1.style.display=='non'){
+				button1.style.display='block'
+			}else{
+				button1.style.display='none'
+			}
+		}
+	</script>
+  
 
   <footer class="page-footer" style="background-color: #b0bec5; color: #fafafa;">
     <div class="container">
