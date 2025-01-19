@@ -110,17 +110,6 @@
         color: #fafafa;
     }
 
-footer 
-    {
-      display: flex;
-      justify-content: center;
-      padding: 5px;
-      background-color: #b0bec5;
-      color: #fafafa;
-      font-family: "cwTeXYen", sans-serif;
-      font-weight: 800;
-      font-style: normal;	
-    }
 
 .bg-blue
     {
@@ -193,6 +182,353 @@ p{
 	}
 }
 
+header {
+    background-color:#C9BA9B;
+    height:110px;
+    width:100%;
+    position:fixed;    
+    }
+    h1 {
+        color:white;
+        position:absolute;
+        left:120px;
+        top:0;
+        line-height: 80px;
+        background-image:url(images/logo.svg) ;
+        background-repeat: no-repeat;
+        background-position: center;
+        width:210px;
+        text-indent: -9999px; 
+    }
+    header ul {
+        position:absolute;
+        right:5vw;
+        top:0;
+        line-height:80px;
+    }
+    header li {
+        display:inline;
+        margin-right:4vw;    
+    }
+    header a {
+        color:white;
+        text-decoration: none;
+    }
+    header a:hover {
+        text-decoration: underline;
+    }
+    header p {
+        color:white;
+        text-decoration: none;
+        font-family: "cwTeXYen", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+    }
+    .news {
+        background-color: antiquewhite;
+        color:white;
+        height:95vh;
+        background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20220314/pngtree-ultra-high-definition-dogtail-photos-image_1012986.jpg");
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-position: center;
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+    } 
+    .news h2 {
+        font-size:60px;
+        margin-top:60px;
+    } 
+    .news p {
+        color:#FEF7E6;
+        font-size:18px;
+        margin:25px 0;
+    }
+    .news a {
+        color:white;
+        text-decoration: none;
+        border: 1px solid #ACACAC;
+        padding:10px 20px;
+        border-radius: 5px;
+    }
+    .slogan {
+        background-color:#917B56;
+        color:white;
+        height:250px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        line-height: 1.8em;  
+    }
+    .shop {
+        display:flex;
+        text-decoration: none;
+        font-family: "cwTeXYen", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+    }
+    .shop img {
+        width:50%;
+    }
+    .info {
+        width:50%;
+        background-color: white;
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-family: "cwTeXYen", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+    }
+    .info h2 {
+        font-size:40px;
+        margin-bottom: 30px;
+        text-decoration: none;
+        font-family: "cwTeXYen", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+    }
+    .info p {
+        text-align: center;
+        line-height: 2em;
+        text-decoration: none;
+        font-family: "cwTeXYen", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+    }
+    .product {
+        display:flex;
+        background-color: #ede9db;
+        justify-content: space-between;
+        align-items: center;
+        padding: 100px 180px 80px;
+    }
+    .product div {
+        width:300px;
+        text-align:center;
+    }
+    .product img {
+        width:100%;
+        border-radius: 10px;;
+    }
+    .product h3 {
+        font-size: 20px;    
+        margin: 20px 0;
+    }
+    .product p {
+        font-size:14px;
+        line-height: 1.6em;
+    }
+    .newsletter {
+        background-color:#C9BA9B;
+        color:white;
+        padding:60px 0;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .newsletter p {
+        margin-bottom: 20px;
+        color:white;
+    }
+    .newsletter input, .newsletter button {
+        background-color: transparent;
+        color:white;
+        border: 1px solid #949d9a; 
+        padding: 10px; 
+        border-radius: 5px;;
+    }
+    .newsletter input {
+        width:200px;
+        margin-right: 15px;;
+    }
+    .newsletter button {
+        width:80px;
+        cursor:pointer;
+    }
+    input::placeholder {
+        color:#DDDDDD;
+    }
+    input:focus {
+        outline: none; 
+        border-color:#E0E9A3; 
+    }
+    footer {
+        background-color:#C9BA9B;
+        color:white;
+        height:60px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+    }
+    .menu {
+        display:none;
+    }
+    .p{
+      color:white;
+    }
+    
+    /* 響應式設計語法 */
+    @media screen and (max-width: 768px) {
+    header ul {
+        display:none;
+    }
+    header h1 {
+        left:50%;
+        transform: translateX(-50%);
+    }
+    .news h2 {
+        font-size:40px;
+    }
+    .menu {
+        display:block;
+        background-color: transparent;
+        color:white;
+        font-size: 40px;
+        position:absolute;
+        top:15px;
+        left:20px;
+        border:none;
+        cursor: pointer;
+    }
+    .shop {
+        flex-direction: column;
+    }
+    .shop img {
+        width:100%;
+    }
+    .info {
+        width:100%;
+        padding:40px 0;
+    }
+    .info h2 {
+        font-size:30px;
+    }
+    .product {
+        flex-direction: column;
+        padding: 60px 0;
+    }
+    .product div {
+        margin-bottom: 30px;
+    }
+    }
+
+    body{
+      margin:0;
+      color: #263238;
+      font-family: "cwTeXYen", sans-serif;
+      font-weight: 800;
+      font-style: normal;
+    }
+
+    .topnav {
+      overflow: hidden;
+      background-color: #C9BA9B;
+    }
+
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .active {
+      background-color: #C9BA9B;
+      color: white;
+    }
+
+    .topnav .icon {
+      display: none;
+    }
+
+    .dropdown {
+      float: left;
+      overflow: hidden;
+    }
+
+    .dropdown .dropbtn {
+      font-size: 17px;    
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    
+    .topnav a:hover, .dropdown:hover .dropbtn {
+      background-color: #555;
+      color: white;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    @media screen and (max-width: 600px) {
+      .topnav a:not(:first-child), .dropdown .dropbtn {
+        display: none;
+      }
+      .topnav a.icon {
+        float: right;
+        display: block;
+      }
+    }
+    
+    @media screen and (max-width: 600px) {
+      .topnav.responsive {position: relative;}
+      .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+      .topnav.responsive .dropdown {float: none;}
+      .topnav.responsive .dropdown-content {position: relative;}
+      .topnav.responsive .dropdown .dropbtn {
+        display: block;
+        width: 100%;
+        text-align: left;
+      }
+    }
 </style>
 <!--改變字型,家背景顏色bottom-->
     <head>
@@ -345,15 +681,44 @@ p{
 <!-- Image and text -->
 
 	    
-<nav class="navbar navbar-light bg-blue" height="500px">
-	<div class="container-fluid">
-  <a class="navbar-brand" href="#">
-    <img src="https://bpic.588ku.com/element_pic/23/04/25/01d5ea95f5e6c2148fa464b7c9cad559.png!/fw/350/quality/99/unsharp/true/compress/true" width="50" height="50" class="d-inline-block align-top" alt="black cat">
-    <span style="font-size:50px;"> 貓咪事務所</span>
-  </a>
-	</div>
-</nav>
+<header>
+    <!--<button class="menu">&#9776;</button>-->
+    <!--<h1>烘培工坊</h1>-->
+    
+    <div style="padding-left:16px; color:white;">
+      <h2>Dancing With Your Cat</h2>
+      <p>和貓咪一起喝下午茶享受午後時光</p>
+    </div>
 
+    <div class="topnav" id="myTopnav">
+      <a href="#home" class="active">Home</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+      <div class="dropdown">
+        <button class="dropbtn">Dropdown 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div> 
+      <a href="#about">About</a>
+      <a href="javascript:void(0);" style="font-size:30px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+
+    <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script>
+  </header>
 	    
 	    <p>貓咪的可愛是無法阻擋的可愛，奧地利動物行為學家康拉德·洛倫茨(Konrad Lorenz)，1943年提出了「嬰兒圖式」的概念。根據這個理論，人類會本能地將大眼睛、胖嘟嘟的臉頰和、小鼻子、小嘴巴等嬰兒特徵視為是可愛的。這樣的特徵會讓人們想照顧嬰兒，進而提升生物個體的生存機率。 就像嬰兒一樣，貓咪的身體特徵也會活化大腦的可愛反應。這可能是由於貓擁有包括大眼睛和小鼻子等，與嬰兒類似的的身體特徵。不僅如此，更有研究表明，人類會將「嬰兒圖式效應」延伸到動物身上。這或許就是我們會覺得貓咪可愛的根本原因。</p>
 	    <center><img src="https://cdn.cybassets.com/s/files/18929/ckeditor/pictures/content_679f61eb-3abb-46f5-bee8-00c0dc8e9725.jpg" alt="cutiea" width="50%"></center>
